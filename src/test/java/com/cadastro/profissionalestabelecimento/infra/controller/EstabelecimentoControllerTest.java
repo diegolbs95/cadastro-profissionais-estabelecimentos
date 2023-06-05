@@ -3,7 +3,7 @@ package com.cadastro.profissionalestabelecimento.infra.controller;
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoDto;
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoResponseDto;
 import com.cadastro.profissionalestabelecimento.core.dto.ProfissionalDto;
-import com.cadastro.profissionalestabelecimento.core.service.EstabelecimentoService;
+import com.cadastro.profissionalestabelecimento.core.service.impl.EstabelecimentoServiceImpl;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ import static org.mockito.Mockito.*;
 class EstabelecimentoControllerTest {
 
     @Mock
-    EstabelecimentoService estabelecimentoService;
+    EstabelecimentoServiceImpl estabelecimentoService;
 
     @InjectMocks
     EstabelecimentoController estabelecimentoController;

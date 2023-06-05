@@ -1,7 +1,7 @@
 package com.cadastro.profissionalestabelecimento.core.service;
 
 import com.cadastro.profissionalestabelecimento.core.dto.ProfissionalDto;
-import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
+import com.cadastro.profissionalestabelecimento.core.service.impl.ProfissionalServiceImpl;
 import com.cadastro.profissionalestabelecimento.infra.exception.ProfissionalException;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Profissional;
 import com.cadastro.profissionalestabelecimento.infra.persistence.repository.ProfissionalRepository;
@@ -27,7 +27,7 @@ class ProfissionalServiceTest {
     ProfissionalRepository profissionalRepository;
 
     @InjectMocks
-    ProfissionalService profissionalService;
+    ProfissionalServiceImpl profissionalService;
 
     private final List<Profissional> listProfissionais = new ArrayList<>();
     private Profissional profissional;

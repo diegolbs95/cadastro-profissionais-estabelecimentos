@@ -1,6 +1,9 @@
 package com.cadastro.profissionalestabelecimento.core.service;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoProfissionalDto;
+import com.cadastro.profissionalestabelecimento.core.service.impl.CadastrarProfissionalNoEstabelecimentoServiceImpl;
+import com.cadastro.profissionalestabelecimento.core.service.impl.EstabelecimentoServiceImpl;
+import com.cadastro.profissionalestabelecimento.core.service.impl.ProfissionalServiceImpl;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import com.cadastro.profissionalestabelecimento.infra.exception.ProfissionalException;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Estabelecimento;
@@ -28,18 +31,18 @@ import static org.mockito.Mockito.*;
 class CadastrarProfissionalNoEstabelecimentoServiceTest {
 
     @Mock
-    EstabelecimentoService estabelecimentoService;
+    EstabelecimentoServiceImpl estabelecimentoService;
     @Mock
     ProfissionalRepository profissionalRepository;
     @Mock
-    ProfissionalService profissionalService;
+    ProfissionalServiceImpl profissionalService;
     @Mock
     EstabelecimentoProfissionalRepository estabelecimentoProfissionalRepository;
     @Mock
     EstabelecimentoProfissional estabelecimentoProfissional;
 
     @InjectMocks
-    CadastrarProfissionalNoEstabelecimentoService cadastrarProfissionalNoEstabelecimentoService;
+    CadastrarProfissionalNoEstabelecimentoServiceImpl cadastrarProfissionalNoEstabelecimentoService;
 
     private EstabelecimentoProfissionalDto estabelecimentoProfissionalDto;
     private final List<Profissional> listProfissionais = new ArrayList<>();

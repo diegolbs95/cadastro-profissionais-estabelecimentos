@@ -3,6 +3,7 @@ package com.cadastro.profissionalestabelecimento.core.service;
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoDto;
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoResponseDto;
 import com.cadastro.profissionalestabelecimento.core.dto.ProfissionalDto;
+import com.cadastro.profissionalestabelecimento.core.service.impl.EstabelecimentoServiceImpl;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Estabelecimento;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Profissional;
@@ -29,7 +30,7 @@ class EstabelecimentoServiceTest {
     EstabelecimentoRepository estabelecimentoRepository;
 
     @InjectMocks
-    EstabelecimentoService estabelecimentoService;
+    EstabelecimentoServiceImpl estabelecimentoService;
 
     private EstabelecimentoDto estabelecimentoDto;
     private Estabelecimento estabelecimento;

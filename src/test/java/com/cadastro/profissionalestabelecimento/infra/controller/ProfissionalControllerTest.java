@@ -1,7 +1,7 @@
 package com.cadastro.profissionalestabelecimento.infra.controller;
 
 import com.cadastro.profissionalestabelecimento.core.dto.ProfissionalDto;
-import com.cadastro.profissionalestabelecimento.core.service.ProfissionalService;
+import com.cadastro.profissionalestabelecimento.core.service.impl.ProfissionalServiceImpl;
 import com.cadastro.profissionalestabelecimento.infra.exception.ProfissionalException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 class ProfissionalControllerTest {
 
     @Mock
-    ProfissionalService profissionalService;
+    ProfissionalServiceImpl profissionalService;
 
     @InjectMocks
     ProfissionalController profissionalController;
