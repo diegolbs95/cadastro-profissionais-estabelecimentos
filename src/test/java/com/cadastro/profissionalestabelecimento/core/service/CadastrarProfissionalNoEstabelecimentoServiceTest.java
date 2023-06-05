@@ -25,7 +25,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class ProfissionalEstabelecimentoServiceTest {
+class CadastrarProfissionalNoEstabelecimentoServiceTest {
 
     @Mock
     EstabelecimentoService estabelecimentoService;
@@ -39,7 +39,7 @@ class ProfissionalEstabelecimentoServiceTest {
     EstabelecimentoProfissional estabelecimentoProfissional;
 
     @InjectMocks
-    EstabelecimentoProfissionalService estabelecimentoProfissionalService;
+    CadastrarProfissionalNoEstabelecimentoService cadastrarProfissionalNoEstabelecimentoService;
 
     private EstabelecimentoProfissionalDto estabelecimentoProfissionalDto;
     private final List<Profissional> listProfissionais = new ArrayList<>();
@@ -86,7 +86,7 @@ class ProfissionalEstabelecimentoServiceTest {
         when(profissionalService.buscarProfissionalOuFalhar(anyString()))
                 .thenReturn(profissional);
 
-        var result = estabelecimentoProfissionalService
+        var result = cadastrarProfissionalNoEstabelecimentoService
                 .cadastrarProfissionalEstabelecimento(estabelecimentoProfissionalDto);
 
         verify(estabelecimentoProfissionalRepository, times(1))
@@ -108,8 +108,8 @@ class ProfissionalEstabelecimentoServiceTest {
                 .thenReturn(profissional);
 
         Assertions.assertThrows(EstabelecimentoException.class,
-                ()-> estabelecimentoProfissionalService
-                .cadastrarProfissionalEstabelecimento(estabelecimentoProfissionalDto));
+                ()-> cadastrarProfissionalNoEstabelecimentoService
+                        .cadastrarProfissionalEstabelecimento(estabelecimentoProfissionalDto));
     }
 
     @Test
@@ -131,7 +131,7 @@ class ProfissionalEstabelecimentoServiceTest {
                 .thenReturn(profissional02);
 
         Assertions.assertThrows(EstabelecimentoException.class,
-                ()-> estabelecimentoProfissionalService
+                ()-> cadastrarProfissionalNoEstabelecimentoService
                         .cadastrarProfissionalEstabelecimento(estabelecimentoProfissionalDto));
     }
 }

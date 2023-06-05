@@ -1,7 +1,7 @@
 package com.cadastro.profissionalestabelecimento.infra.controller;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoProfissionalDto;
-import com.cadastro.profissionalestabelecimento.core.service.EstabelecimentoProfissionalService;
+import com.cadastro.profissionalestabelecimento.core.service.CadastrarProfissionalNoEstabelecimentoService;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import com.cadastro.profissionalestabelecimento.infra.exception.ProfissionalException;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Tag(name = "Cadastrar-Estabelecimento-Profissional",
         description = "API REST cadastramento de profissionais no estabelecimento")
-public class CadastrarEstabelecimentoProfissionalController {
+public class CadastrarProfissionalNoEstabelecimentoController {
 
-    private final EstabelecimentoProfissionalService estabelecimentoProfissionalService;
+    private final CadastrarProfissionalNoEstabelecimentoService cadastrarProfissionalNoEstabelecimentoService;
 
     @PostMapping
     @Operation(summary = "Cadastramento de dados do profissional no estabelecimento")
@@ -31,7 +31,7 @@ public class CadastrarEstabelecimentoProfissionalController {
                                                                                    estabelecimentoProfissionalDto)
                                                             throws ProfissionalException, EstabelecimentoException {
 
-        return ResponseEntity.ok(estabelecimentoProfissionalService
+        return ResponseEntity.ok(cadastrarProfissionalNoEstabelecimentoService
                 .cadastrarProfissionalEstabelecimento(estabelecimentoProfissionalDto));
     }
 }

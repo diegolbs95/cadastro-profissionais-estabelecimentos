@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class EstabelecimentoProfissionalService {
+public class CadastrarProfissionalNoEstabelecimentoService {
 
     private final EstabelecimentoService estabelecimentoService;
 

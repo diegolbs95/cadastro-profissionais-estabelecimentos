@@ -1,7 +1,7 @@
 package com.cadastro.profissionalestabelecimento.infra.controller;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoProfissionalDto;
-import com.cadastro.profissionalestabelecimento.core.service.EstabelecimentoProfissionalService;
+import com.cadastro.profissionalestabelecimento.core.service.CadastrarProfissionalNoEstabelecimentoService;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import com.cadastro.profissionalestabelecimento.infra.exception.ProfissionalException;
 import org.junit.jupiter.api.Test;
@@ -16,13 +16,13 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class CadastrarEstabelecimentoProfissionalControllerTest {
+class CadastrarProfissionalNoEstabelecimentoTest {
 
     @Mock
-    EstabelecimentoProfissionalService estabelecimentoProfissionalService;
+    CadastrarProfissionalNoEstabelecimentoService estabelecimentoProfissionalService;
 
     @InjectMocks
-    CadastrarEstabelecimentoProfissionalController controller;
+    CadastrarProfissionalNoEstabelecimentoController controller;
 
     @Test
     void cadastrarEstabelecimentoProfissional() throws ProfissionalException, EstabelecimentoException {
