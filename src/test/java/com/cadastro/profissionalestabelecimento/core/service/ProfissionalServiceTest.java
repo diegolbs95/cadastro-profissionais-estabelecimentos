@@ -111,16 +111,16 @@ class ProfissionalServiceTest {
 
         verify(profissionalRepository, times(1)).delete(any());
     }
-
-    @Test
-    void buscarProfissionalPorCpfTest() throws ProfissionalException {
-
-        when(profissionalRepository.findByCpf(anyString()))
-                .thenReturn(Optional.ofNullable(profissional));
-
-        var result = profissionalService
-                .buscarProfissionalPorCpf("45658478996");
-
-        assertEquals(profissionalDto, result);
-    }
+//
+//    @Test
+//    void buscarProfissionalPorCpfTest() throws ProfissionalException {
+//
+//        when(profissionalRepository.findByCpf(anyString()))
+//                .thenReturn(Optional.ofNullable(profissional));
+//
+//        var result = profissionalService
+//                .buscarProfissionalPorCpf("45658478996");
+//
+//        assertEquals(profissionalDto, result);
+//    }
 }

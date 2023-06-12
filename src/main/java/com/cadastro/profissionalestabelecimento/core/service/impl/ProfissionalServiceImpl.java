@@ -55,9 +55,9 @@ public class ProfissionalServiceImpl implements ProfissionalService {
     @Override
     public ProfissionalDto buscarProfissionalPorCpf(String cpfProfissional) throws ProfissionalException {
         log.info("Buscando profissional com CPF: " + cpfProfissional);
-        var estabelecimento = buscarProfissionalOuFalhar(cpfProfissional);
+        var profissional = buscarProfissionalOuFalhar(cpfProfissional);
 
-        return ProfissionalFactory.criarProfissionalDto(estabelecimento);
+        return ProfissionalFactory.criarProfissionalDto(profissional);
     }
 
     @Override

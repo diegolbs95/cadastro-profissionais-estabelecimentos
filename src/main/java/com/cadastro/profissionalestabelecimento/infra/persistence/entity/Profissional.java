@@ -1,6 +1,5 @@
 package com.cadastro.profissionalestabelecimento.infra.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -30,9 +29,4 @@ public class Profissional {
     private String especialidade;
     @Column(length = 10000)
     private String urlFoto;
-
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "estabelecimento_id")
-    private Estabelecimento estabelecimento;
 }

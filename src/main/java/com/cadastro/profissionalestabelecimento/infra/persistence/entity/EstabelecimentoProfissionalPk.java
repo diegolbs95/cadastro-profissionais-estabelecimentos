@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Setter
+@Getter
 @Embeddable
 public class EstabelecimentoProfissionalPk {
 

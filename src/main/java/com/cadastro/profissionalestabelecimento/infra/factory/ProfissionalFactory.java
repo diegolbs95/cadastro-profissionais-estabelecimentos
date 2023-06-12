@@ -25,8 +25,8 @@ public class ProfissionalFactory {
                 profissional.getNome(),
                 profissional.getCpf(),
                 profissional.getEndereco(),
-                profissional.getTelefoneCelular().replaceAll("\\D", ""),
-                profissional.getTelefoneFixo().replaceAll("\\D", ""),
+                profissional.getTelefoneCelular(),
+                profissional.getTelefoneFixo(),
                 profissional.getEspecialidade(),
                 profissional.getUrlFoto());
     }

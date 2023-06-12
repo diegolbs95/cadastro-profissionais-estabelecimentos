@@ -1,7 +1,7 @@
 package com.cadastro.profissionalestabelecimento.infra.controller;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoDto;
-import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoResponseDto;
+import com.cadastro.profissionalestabelecimento.core.dto.ProfissionalDto;
 import com.cadastro.profissionalestabelecimento.core.service.EstabelecimentoService;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,8 +26,7 @@ public class EstabelecimentoController {
     @PostMapping("/cadastrar-estabelecimento")
     @Operation(summary = "Cadastrar um estabelecimento")
     @ApiResponse(responseCode = "201", description = "created", content = {
-            @Content(mediaType = "application/json", schema = @Schema(implementation = EstabelecimentoDto.class))
-    })
+            @Content(mediaType = "application/json", schema = @Schema(implementation = EstabelecimentoDto.class))})
     public ResponseEntity<EstabelecimentoDto> cadastrarEstabelecimento(
             @Validated @RequestBody EstabelecimentoDto estabelecimentoDto) throws EstabelecimentoException {
 
@@ -38,8 +37,7 @@ public class EstabelecimentoController {
     @PutMapping("/atualizar-estabelecimento")
     @Operation(summary = "Atualizar u estabelecimento passando CNPJ")
     @ApiResponse(responseCode = "200", description = "OK", content = {
-            @Content(mediaType = "application/json", schema = @Schema(implementation = EstabelecimentoDto.class))
-    })
+            @Content(mediaType = "application/json", schema = @Schema(implementation = EstabelecimentoDto.class))})
     public ResponseEntity<EstabelecimentoDto> atualizarEstabelecimento(@RequestParam String cnpjEstabelecimento,
                                                                        @Validated @RequestBody EstabelecimentoDto estabelecimentoDto)
                                                                         throws EstabelecimentoException {
@@ -50,9 +48,8 @@ public class EstabelecimentoController {
     @GetMapping
     @Operation(summary = "Retornar um estabelecimento passando CNPJ")
     @ApiResponse(responseCode = "200", description = "OK", content = {
-            @Content(mediaType = "application/json", schema = @Schema(implementation = EstabelecimentoResponseDto.class))
-    })
-    public ResponseEntity<EstabelecimentoResponseDto> buscarEstabelecimentoPorCnpj(@RequestParam String cnpjEstabelecimento)
+            @Content(mediaType = "application/json", schema = @Schema(implementation = ProfissionalDto.class))})
+    public ResponseEntity<EstabelecimentoDto> buscarEstabelecimentoPorCnpj(@RequestParam String cnpjEstabelecimento)
                                                                             throws EstabelecimentoException {
         return ResponseEntity.ok(estabelecimentoService.buscarEstabelecimentoPorCnpj(cnpjEstabelecimento));
     }

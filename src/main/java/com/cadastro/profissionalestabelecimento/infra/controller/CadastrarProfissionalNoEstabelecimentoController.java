@@ -24,9 +24,8 @@ public class CadastrarProfissionalNoEstabelecimentoController {
 
     @PostMapping
     @Operation(summary = "Cadastramento de dados do profissional no estabelecimento")
-    @ApiResponse(responseCode = "201", description = "created", content = {
-            @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))
-    })
+    @ApiResponse(responseCode = "200", description = "sucesso", content = {
+            @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))})
     public ResponseEntity<String> cadastrarEstabelecimentoProfissional(@RequestBody EstabelecimentoProfissionalDto
                                                                                    estabelecimentoProfissionalDto)
                                                             throws ProfissionalException, EstabelecimentoException {

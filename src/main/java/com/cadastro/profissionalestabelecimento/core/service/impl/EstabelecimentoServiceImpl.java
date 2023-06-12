@@ -1,7 +1,6 @@
 package com.cadastro.profissionalestabelecimento.core.service.impl;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoDto;
-import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoResponseDto;
 import com.cadastro.profissionalestabelecimento.core.service.EstabelecimentoService;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Estabelecimento;
 import com.cadastro.profissionalestabelecimento.infra.factory.EstabelecimentoFactory;
@@ -55,11 +54,11 @@ public class EstabelecimentoServiceImpl implements EstabelecimentoService {
     }
 
     @Override
-    public EstabelecimentoResponseDto buscarEstabelecimentoPorCnpj(String cnpjEstabelecimento) throws EstabelecimentoException {
+    public EstabelecimentoDto buscarEstabelecimentoPorCnpj(String cnpjEstabelecimento) throws EstabelecimentoException {
         log.info("Buscando estabelecimento com CNPJ: " + cnpjEstabelecimento);
         var estabelecimento = buscarEstabelecimentoOuFalhar(cnpjEstabelecimento);
 
-        return EstabelecimentoFactory.criarEstabelecimentoResponse(estabelecimento);
+        return EstabelecimentoFactory.criarEstabelecimentoDto(estabelecimento);
     }
 
     @Override
@@ -67,7 +66,7 @@ public class EstabelecimentoServiceImpl implements EstabelecimentoService {
         var estabelecimentoAtual = estabelecimentoRepository
                                                       .findByCnpj(cnpjEstabelecimento.replaceAll("\\D", ""));
         if (estabelecimentoAtual.isEmpty()){
-            log.error("[ERRO] - Estabelecimento nao encontrado com CNPJ: %s." + cnpjEstabelecimento);
+            log.error("[ERRO] - Estabelecimento nao encontrado com CNPJ: " + cnpjEstabelecimento);
             throw new EstabelecimentoException("Nao existem Estabelecimento com CNPJ solicitado.");
         }
         return estabelecimentoAtual.get();

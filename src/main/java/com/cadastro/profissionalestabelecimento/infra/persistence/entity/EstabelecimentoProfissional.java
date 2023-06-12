@@ -5,6 +5,7 @@ import lombok.*;
 
 @Entity
 @Setter
+@Getter
 @Table(name = "tb_estabelecimento_profissional")
 public class EstabelecimentoProfissional {
 

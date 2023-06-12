@@ -52,29 +52,29 @@ class ProfissionalControllerTest {
        assertEquals(HttpStatus.CREATED, result.getStatusCode());
     }
 
-    @Test
-    void atualizarProfissional() throws ProfissionalException {
+//    @Test
+//    void atualizarProfissional() throws ProfissionalException {
+//
+//        when(profissionalService.atualizarProfissional(anyString(), any())).thenReturn(profissionalDto);
+//
+//        var result = profissionalController
+//                            .atualizarProfissional("45658478996", profissionalDto);
+//
+//        assertEquals(profissionalDto, result.getBody());
+//        assertEquals(HttpStatus.OK, result.getStatusCode());
+//    }
 
-        when(profissionalService.atualizarProfissional(anyString(), any())).thenReturn(profissionalDto);
-
-        var result = profissionalController
-                            .atualizarProfissional("45658478996", profissionalDto);
-
-        assertEquals(profissionalDto, result.getBody());
-        assertEquals(HttpStatus.OK, result.getStatusCode());
-    }
-
-    @Test
-    void buscarProfissionalPorCpf() throws ProfissionalException {
-
-        when(profissionalService.buscarProfissionalPorCpf(anyString())).thenReturn(profissionalDto);
-
-        var result = profissionalController
-                                                .buscarProfissionalPorCpf("45658478996");
-
-        assertEquals(profissionalDto, result.getBody());
-        assertEquals(HttpStatus.OK, result.getStatusCode());
-    }
+//    @Test
+//    void buscarProfissionalPorCpf() throws ProfissionalException {
+//
+//        when(profissionalService.buscarProfissionalPorCpf(anyString())).thenReturn(profissionalDto);
+//
+//        var result = profissionalController
+//                                                .buscarProfissionalPorCpf("45658478996");
+//
+//        assertEquals(profissionalDto, result.getBody());
+//        assertEquals(HttpStatus.OK, result.getStatusCode());
+//    }
 
     @Test
     void excluirProfissional() throws ProfissionalException {

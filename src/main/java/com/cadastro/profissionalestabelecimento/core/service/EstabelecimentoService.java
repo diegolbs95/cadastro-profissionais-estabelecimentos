@@ -1,7 +1,6 @@
 package com.cadastro.profissionalestabelecimento.core.service;
 
 import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoDto;
-import com.cadastro.profissionalestabelecimento.core.dto.EstabelecimentoResponseDto;
 import com.cadastro.profissionalestabelecimento.infra.exception.EstabelecimentoException;
 import com.cadastro.profissionalestabelecimento.infra.persistence.entity.Estabelecimento;
 
@@ -13,7 +12,7 @@ public interface EstabelecimentoService {
 
     void deletarEstabelecimento(String cnpjEstabelecimento) throws EstabelecimentoException;
 
-    EstabelecimentoResponseDto buscarEstabelecimentoPorCnpj(String cnpjEstabelecimento) throws EstabelecimentoException;
+    EstabelecimentoDto buscarEstabelecimentoPorCnpj(String cnpjEstabelecimento) throws EstabelecimentoException;
 
     Estabelecimento buscarEstabelecimentoOuFalhar(String cnpjEstabelecimento) throws EstabelecimentoException;
 }

@@ -5,11 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-import java.util.List;
-
-import static jakarta.persistence.CascadeType.ALL;
-import static jakarta.persistence.FetchType.EAGER;
-
 @Entity
 @Builder
 @Getter
@@ -31,7 +26,4 @@ public class Estabelecimento {
     private String endereco;
     private String telefone;
     private String especialidade;
-
-    @OneToMany(fetch = EAGER, mappedBy = "estabelecimento", cascade = ALL)
-    private List<Profissional> profissionais;
 }
